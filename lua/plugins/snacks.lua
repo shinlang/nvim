@@ -130,5 +130,20 @@ return {
 			end,
 			desc = "Lazygit",
 		},
+		-- Buffers
+		{
+			"bd",
+			function()
+				Snacks.bufdelete()
+			end,
+			desc = "Delete Buffer",
+		},
+		{
+			"bo",
+			function()
+				Snacks.bufdelete.other()
+			end,
+			desc = "Delete other buffers",
+		},
 	},
 }
