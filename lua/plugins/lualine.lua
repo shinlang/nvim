@@ -85,8 +85,6 @@ return {
 			},
 		}
 
-		local colors = require("onedarkpro.helpers").get_colors()
-
 		vim.o.laststatus = vim.g.lualine_laststatus
 
 		local opts = {
@@ -148,9 +146,9 @@ return {
 						},
 						diff_color = {
 							-- Same color values as the general color option can be used here.
-							added = { fg = colors.green }, -- Changes the diff's added color
-							modified = { fg = colors.yellow }, -- Changes the diff's modified color
-							removed = { fg = colors.red }, -- Changes the diff's removed color you
+							added = "MiniIconsGreen", -- Changes the diff's added color
+							modified = "MiniIconsYellow", -- Changes the diff's modified color
+							removed = "MiniIconsRed", -- Changes the diff's removed color you
 						},
 						source = function()
 							local gitsigns = vim.b.gitsigns_status_dict
