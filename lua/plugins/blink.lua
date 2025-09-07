@@ -2,6 +2,11 @@ return { -- Autocompletion
 	"saghen/blink.cmp",
 	event = "VimEnter",
 	version = "1.*",
+	opts_extend = {
+		"sources.completion.enabled_providers",
+		"sources.compat",
+		"sources.default",
+	},
 	dependencies = {
 		-- Snippet Engine
 		{
@@ -31,6 +36,7 @@ return { -- Autocompletion
 		},
 		"folke/lazydev.nvim",
 		"Kaiser-Yang/blink-cmp-avante",
+		"giuxtaposition/blink-cmp-copilot",
 	},
 	--- @module 'blink.cmp'
 	--- @type blink.cmp.Config
@@ -57,7 +63,7 @@ return { -- Autocompletion
 			-- <c-k>: Toggle signature help
 			--
 			-- See :h blink-cmp-config-keymap for defining your own keymap
-			preset = "default",
+			preset = "enter",
 
 			-- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
 			--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -70,13 +76,19 @@ return { -- Autocompletion
 		},
 
 		completion = {
-			-- By default, you may press `<c-space>` to show the documentation.
-			-- Optionally, set `auto_show = true` to show the documentation after a delay.
-			documentation = { auto_show = false, auto_show_delay_ms = 500 },
+			documentation = { auto_show = true, auto_show_delay_ms = 200 },
+			menu = {
+				draw = {
+					treesitter = { "lsp" },
+				},
+			},
+			ghost_text = {
+				enabled = vim.g.ai_cmp,
+			},
 		},
 
 		sources = {
-			default = { "avante", "lsp", "path", "snippets", "lazydev" },
+			default = { "copilot", "lsp", "path", "snippets", "buffer", "lazydev" },
 			providers = {
 				lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
 				avante = {
@@ -85,6 +97,13 @@ return { -- Autocompletion
 					opts = {
 						-- options for blink-cmp-avante
 					},
+				},
+				copilot = {
+					name = "copilot",
+					module = "blink-cmp-copilot",
+					kind = "Copilot",
+					score_offset = 100,
+					async = true,
 				},
 			},
 		},
