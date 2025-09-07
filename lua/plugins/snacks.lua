@@ -19,6 +19,7 @@ return {
 		scroll = { enabled = false },
 		statuscolumn = { enabled = false },
 		words = { enabled = false },
+		lazygit = {},
 	},
 	keys = {
 		{
@@ -121,6 +122,13 @@ return {
 				Snacks.picker.lsp_type_definitions()
 			end,
 			desc = "Goto T[y]pe Definition",
+		},
+		{
+			"gg",
+			function()
+				Snacks.lazygit()
+			end,
+			desc = "Lazygit",
 		},
 	},
 }
