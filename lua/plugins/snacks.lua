@@ -124,7 +124,7 @@ return {
 			desc = "Goto T[y]pe Definition",
 		},
 		{
-			"gg",
+			"<leader>gg",
 			function()
 				Snacks.lazygit()
 			end,
@@ -132,14 +132,14 @@ return {
 		},
 		-- Buffers
 		{
-			"bd",
+			"<leader>bd",
 			function()
 				Snacks.bufdelete()
 			end,
 			desc = "Delete Buffer",
 		},
 		{
-			"bo",
+			"<leader>bo",
 			function()
 				Snacks.bufdelete.other()
 			end,
