@@ -20,6 +20,7 @@ return {
 		statuscolumn = { enabled = false },
 		words = { enabled = false },
 		lazygit = {},
+		scratch = {},
 	},
 	keys = {
 		{
@@ -144,6 +145,20 @@ return {
 				Snacks.bufdelete.other()
 			end,
 			desc = "Delete other buffers",
+		},
+		{
+			"<leader>.",
+			function()
+				Snacks.scratch()
+			end,
+			desc = "Toggle Scratch Buffer",
+		},
+		{
+			"<leader>S",
+			function()
+				Snacks.scratch.select()
+			end,
+			desc = "Select Scratch Buffer",
 		},
 	},
 }
