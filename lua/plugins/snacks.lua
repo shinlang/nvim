@@ -21,6 +21,7 @@ return {
 		words = { enabled = false },
 		lazygit = {},
 		scratch = {},
+		toggle = {},
 	},
 	keys = {
 		{
@@ -159,6 +160,13 @@ return {
 				Snacks.scratch.select()
 			end,
 			desc = "Select Scratch Buffer",
+		},
+		{
+			"<leader>uw",
+			function()
+				Snacks.toggle.option("wrap", { name = "Wrap"})
+			end,
+			desc = "Toggle word wrapping",
 		},
 	},
 }
