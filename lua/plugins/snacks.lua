@@ -162,7 +162,7 @@ return {
 			desc = "Select Scratch Buffer",
 		},
 		{
-			"<leader>uw",
+			"<leader>tw",
 			function()
 				Snacks.toggle.option("wrap", { name = "Wrap"})
 			end,
