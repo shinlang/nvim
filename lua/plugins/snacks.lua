@@ -22,6 +22,7 @@ return {
 		lazygit = {},
 		scratch = {},
 		toggle = {},
+		terminal = {},
 	},
 	keys = {
 		{
@@ -167,6 +168,13 @@ return {
 				Snacks.toggle.option("wrap", { name = "Wrap"})
 			end,
 			desc = "Toggle word wrapping",
+		},
+		{
+			"<leader>tt",
+			function()
+				Snacks.terminal.toggle()
+			end,
+			desc = "Toggle Terminal",
 		},
 	},
 }
