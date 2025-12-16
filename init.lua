@@ -52,4 +52,7 @@ require("lazy").setup({
 	--
 })
 
+vim.lsp.enable("copilot")
+
 -- vim: ts=2 sts=2 sw=2 et
+
